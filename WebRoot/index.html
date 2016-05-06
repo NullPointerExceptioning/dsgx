@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>大手工心-登录</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="lch">
+<link href="bootstrap3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link href="bootstrap3.3.5/css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<form class="form-signin">
+					<h2 class="form-signin-heading">大手工心</h2>
+					<input type="text" id="user" class="form-control" placeholder="账号" required autofocus>
+					<input type="password" id="pwd" class="form-control" placeholder="密码" required>
+					<button class="btn btn-lg btn-primary btn-block" id="login" type="button" onclick="model.login()">登录</button>
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+	<script src="js/index/login.js"></script>
+</body>
+</html>

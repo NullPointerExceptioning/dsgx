@@ -1,0 +1,16 @@
+body {
+	background: url("../img/login.jpg");
+}
+#pwd {
+	margin-top: 10px;
+}
+button {
+	margin-top: 10px;
+}
+.form-signin-heading{
+	text-align: center;
+	margin-bottom: 50px;
+}
+.form-signin{
+	margin-top:50%;
+}

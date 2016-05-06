@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>dsgx</display-name>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserRegist</servlet-name>
+    <servlet-class>servlet.app.UserRegist</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>WebLogin</servlet-name>
+    <servlet-class>servlet.website.WebLogin</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>WebRegist</servlet-name>
+    <servlet-class>servlet.website.WebRegist</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetServers</servlet-name>
+    <servlet-class>servlet.website.GetServers</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetOnlineInfo</servlet-name>
+    <servlet-class>servlet.website.GetOnlineInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Dialog</servlet-name>
+    <servlet-class>servlet.app.Dialog</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserSendMessage</servlet-name>
+    <servlet-class>servlet.app.UserSendMessage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserAskMessage</servlet-name>
+    <servlet-class>servlet.app.UserAskMessage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserLogin</servlet-name>
+    <servlet-class>servlet.app.UserLogin</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdviserSendMessage</servlet-name>
+    <servlet-class>servlet.website.AdviserSendMessage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdviserAskMessage</servlet-name>
+    <servlet-class>servlet.website.AdviserAskMessage</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetServerLog</servlet-name>
+    <servlet-class>servlet.website.GetServerLog</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CloseDialog</servlet-name>
+    <servlet-class>servlet.app.CloseDialog</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdviserAskService</servlet-name>
+    <servlet-class>servlet.website.AdviserAskService</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdviserCloseService</servlet-name>
+    <servlet-class>servlet.website.AdviserCloseService</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CheckLogin</servlet-name>
+    <servlet-class>servlet.website.CheckLogin</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserAskSign</servlet-name>
+    <servlet-class>servlet.app.UserAskSign</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>UserRegist</servlet-name>
+    <url-pattern>/app/UserRegist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>WebLogin</servlet-name>
+    <url-pattern>/website/WebLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>WebRegist</servlet-name>
+    <url-pattern>/website/WebRegist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetServers</servlet-name>
+    <url-pattern>/website/GetServers</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetOnlineInfo</servlet-name>
+    <url-pattern>/website/GetOnlineInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Dialog</servlet-name>
+    <url-pattern>/app/Dialog</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserSendMessage</servlet-name>
+    <url-pattern>/app/UserSendMessage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserAskMessage</servlet-name>
+    <url-pattern>/app/UserAskMessage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserLogin</servlet-name>
+    <url-pattern>/app/UserLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdviserSendMessage</servlet-name>
+    <url-pattern>/website/AdviserSendMessage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdviserAskMessage</servlet-name>
+    <url-pattern>/website/AdviserAskMessage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GetServerLog</servlet-name>
+    <url-pattern>/website/GetServerLog</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CloseDialog</servlet-name>
+    <url-pattern>/app/CloseDialog</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdviserAskService</servlet-name>
+    <url-pattern>/website/AdviserAskService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdviserCloseService</servlet-name>
+    <url-pattern>/website/AdviserCloseService</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckLogin</servlet-name>
+    <url-pattern>/website/CheckLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserAskSign</servlet-name>
+    <url-pattern>/app/UserAskSign</url-pattern>
+  </servlet-mapping>
+
+ 
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+
+</web-app>

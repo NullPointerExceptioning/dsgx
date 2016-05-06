@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="lch">
+<title>服务台</title>
+<link href="bootstrap3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- styles from bootstrap example  -->
+<link href="bootstrap3.3.5/example/css/offcanvas.css" rel="stylesheet">
+<style type="text/css">
+#chat {
+	background-color: #333;
+	color: #fff;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+	overflow-y:auto;
+	overflow-x:hidden; 
+}
+form{
+	height:15%;
+	width:100%;
+}
+textarea{
+	width:100%;
+	height:75%;
+	background-color:#555;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size:16px;
+	color: #5cb85c;
+	margin:0;
+}
+.userMessage{
+	text-align:left;
+	vertical-align:middle;	
+}
+.adviserMessage{
+	text-align:right;
+	vertical-align:middle;
+}
+.userImg{
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:10px;
+	width:400;
+	height:400;
+}
+.adviserImg{
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-right:10px;
+	width:400;
+	height:400;
+}
+.userLabel{
+	max-width:40%;
+	font-size:18px;
+	background-color:#337ab7;
+	border-radius:3px;
+	padding:5px;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:10px;
+	vertical-align:middle;
+	text-align:left;
+}
+.adviserLabel{
+	max-width:40%;
+	font-size:18px;
+	background-color: #5bc0de;
+	border-radius:3px;
+	padding:5px;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-right:10px;
+	vertical-align:middle;
+	text-align:left;
+}
+.toolframe{
+	width:100%;
+	height:22%;
+	position:relative;
+}
+.sendbtn{
+	margin-right:20px;
+	background-color:#5bc0de;
+	font-size:14px;
+	padding:5px;"
+}
+#content{
+	height:80%;
+	width:100%;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+#input{
+	padding:0;
+	margin:0;
+}
+</style>
+</head>
+<body >
+<script type="text/javascript">
+	//loginCheck();
+	//公用工具，登录验证
+	function loginCheck(){
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("POST", "http://localhost:8080/dsgx/website/CheckLogin");
+		xmlhttp.send(null);
+		if(xmlhttp.status==200){
+			if(xmlhttp.responseText=="-1"){
+				window.location = "index.html";
+			}
+		}
+	}
+</script>
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="javascript:void(0)" style="color:white">欢迎回来</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row row-offcanvas row-offcanvas-right">
+			<div class="col-xs-12 col-sm-9" id="leftmodel">
+				<p class="pull-right visible-xs">
+					<button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+				</p>
+				<div class="jumbotron" >
+					<h1>Hello, world!</h1>
+					<p style="text-align: right;"><br>编程让明天更美好--Chenghui
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 col-lg-4" style="display: none">
+						<h2>Heading</h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce
+							dapibus, tellus ac cursus commodo, tortor mauris condimentum
+							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+							malesuada magna mollis euismod. Donec sed odio dui.
+						</p>
+						<p>
+							<a class="btn btn-default" href="#" role="button">Viewdetails &raquo;</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-9" id="chat" style="display:none;">
+				<div  id="content">
+					<table id="chatTable" style="width:100%;vertical-align: middle;">
+						
+					</table>
+				</div>				
+					<form style="height:15%;">
+						<div class="toolframe">
+							<span style="margin-left:10px;" class="glyphicon glyphicon-camera" onclick="camera()"></span>
+							<span style="margin-left:10px;" class="glyphicon glyphicon-volume-up" onclick="record()"></span>
+						</div>
+						<textarea id="input" spellcheck="false" ></textarea>					
+					</form>	
+					<div style="width:100%;text-align:right;"><label class="sendbtn" onclick="model1.send()">发送</label></div>		
+				</div>
+			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+				<div class="list-group">
+					<a href="javascript:void(0)" id="home" onclick="model2.view('home')" class="list-group-item active">个人主页</a>
+					<a href="javascript:void(0)" id="record" onclick="model2.view('record')" class="list-group-item">消息记录</a> 
+					<a href="javascript:void(0)" id="dialog" onclick="model2.view('dialog');" class="list-group-item">当前服务</a>
+				</div>
+			</div>
+		</div>
+		<hr style="display: none;">
+		<footer>
+		</footer>
+
+	</div>	
+	<script src="js/clock/js/jquery.min.js"></script>
+	<script src="js/clock/js/moment.min.js"></script>
+	<script src="js/clock/assets/js/script.js"></script>
+	<script src="js/adviser/navigation.js"></script>
+	<script src="js/adviser/dialog.js"></script>
+	<script type="text/javascript">
+
+		function camera(){
+			alert("摄像头还没有调试好!");
+		}
+		function record(){
+			alert("没法录音，继续努力！");
+		}
+		//自动定时执行
+		var service = window.setInterval(queryService,30*1000);
+		var message = null;
+		var count = 1;
+		//定时执行，一旦发现服务开启queryMessage服务
+		function queryService(){
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function(){
+				if(xmlhttp.readyState==4&&xmlhttp.status==200){
+					var result = xmlhttp.responseText;
+					if(result=="1"){
+						//启动queryMessage	
+						if(message==null){
+							message = window.setInterval(queryMessage,10*1000);
+						}
+					}else if(result=="-1"){
+						//
+						//提供会话已经结束，刷新界面
+						//
+						//
+						//停止queryMessage
+						if(message!=null){
+							window.clearInterval(message);
+							message = null;
+						}	
+					}
+				}
+			}
+			xmlhttp.open("POST", "http://localhost:8080/dsgx/website/AdviserAskService");
+			xmlhttp.send(null);		
+		}
+		//被queryService服务唤醒以后开始定时查询新消息，当服务中断以后结束该进程。
+		function queryMessage(){
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = function(){
+				if(xmlhttp.readyState==4&&xmlhttp.status==200){
+					var result = xmlhttp.responseText;
+					//当前没有新消息
+					if(result=="-1"){
+						//do nothing
+					}//当前会话已断开
+					else if(result=="-2"){
+					}//收到新消息
+					else{
+						//解析json包
+						var json = JSON.parse(result);
+						//分析每一条数据，并分类显示
+						for(let i=0;i<json.length;i++){
+							let type = json[i].messageType;
+							if(type=="TEXT"){
+								tool1.displayUserMessage(json[i].message);
+							}
+							if(type=="VIDEO"){
+								tool1.displayUserVideo(json[i].messageUrl);
+							}
+							if(type=="IMAGE"){
+								tool1.displayUserImage(json[i].messageUrl);
+							}
+						}
+					}
+				}
+
+			}
+			xmlhttp.open("POST", "http://localhost:8080/dsgx/website/AdviserAskMessage",true);
+			xmlhttp.send(null);
+		}
+		
+
+
+    </script>
+
+</body>
+</html>
