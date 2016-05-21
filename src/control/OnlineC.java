@@ -58,6 +58,55 @@ public class OnlineC {
 
 	}
 	/*
+	 * 获得所有工作的客服信息
+	 * 成功return:客服们的信息
+	 * 失败return:null
+	 */
+	@SuppressWarnings({ "finally", "resource" })
+	public static JSONArray getServers(){
+		//查询在线客服
+		BasicDBObject queryOn = new BasicDBObject();
+		BasicDBObject queryBusy = new BasicDBObject();
+		queryOn.put("state", "on");
+		queryBusy.put("state","wait");
+		//mongodb 客户端
+		MongoClient client = new MongoClient("localhost");
+		//mongodb 数据库
+		MongoDatabase db = client.getDatabase(Values.dbName);
+		//online表
+		MongoCollection<Document> table = db.getCollection("online");
+		//查询的游标
+		MongoCursor<Document> cursor = null;
+		//返回的客服信息
+		JSONArray servers = null;
+		try{
+			cursor = table.find(queryOn).iterator();
+			//临时存储数列
+			ArrayList<JSONObject> temporaryList = new ArrayList<JSONObject>();
+			while(cursor.hasNext()){		
+					JSONObject obj;
+					obj = new JSONObject(cursor.next().toJson());
+					temporaryList.add(obj);
+			}
+			cursor = null;
+			cursor = table.find(queryBusy).iterator();
+			while(cursor.hasNext()){
+				JSONObject obj;
+				obj = new JSONObject(cursor.next().toJson());
+				temporaryList.add(obj);
+			}
+			servers = new JSONArray(temporaryList);
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			cursor.close();
+			client.close();
+			return servers;
+		}
+
+	}
+	
+	/*
 	 * 找寻一名在线的空闲客服。
 	 * 成功return:客服id
 	 * 失败return:null

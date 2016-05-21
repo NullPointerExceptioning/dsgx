@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html> 
+<meta charset="utf-8">
+<body> 
+<button onclick="notifyMe()">Notify me!</button>
+<script>
+//通知新消息
+function notificationTest(){
+	if(!("Notification"in window)){
+		alert("浏览器不支持通知功能，请联系管理员lich@mail.dlut.edu.cn");
+	}else if(Notification.permission=="granted"){
+		var notification = new Notification("你有新的消息，请注意查收!");
+	}else if(Notification.permission!="denied"){
+		Notification.requestPermission(function (permission){
+			if(permission ==="granted"){
+				var notification = new Notification("你有新的消息，请注意查收！");
+			}
+		});
+	}
+	window.alert = function(text){
+		console.log(text);
+	}
+	alert(window.location.href);
+
+}
+//用来判断当前页面是否是激活状态，如果不是，就小窗提示有新消息。
+function hiddenTest(){
+	document.visibilityState=="visible";
+
+}
+//window.setInterval(hiddenTest,3000);
+
+</script>
+<script src="test2.js"></script>
+<script src="test1.js"></script>
+<script src="test2.js"></script>
+<script>
+</script>
+
+</body> 
+</html>

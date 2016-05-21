@@ -61,6 +61,8 @@ public class AdviserSendMessage extends HttpServlet {
 				answer = "1";
 			}
 
+			System.out.println("state:"+dialogState);/////////////////////////////ºóÆÚÉ¾³ý
+			
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{

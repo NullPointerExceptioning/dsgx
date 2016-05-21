@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="lch">
+<title>服务台</title>
+<link href="../../bootstrap3.3.5/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../bootstrap3.3.5/example/css/offcanvas.css" rel="stylesheet">
+<link href="../../css/adviser/style.css" rel="stylesheet">
+<script src="../../js/global.js"></script>
+<script src="../../js/login/check.js"></script>
+</head>
+<body >
+	<nav class="navbar navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">导航</span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span> 
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="javascript:void(0)" style="color:white">欢迎回来</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row row-offcanvas row-offcanvas-right">
+			<div class="col-xs-12 col-sm-9" id="chat">
+				<div  id="content">
+					<table id="chatTable" style="width:100%;vertical-align: middle;"></table>
+				</div>				
+					<form style="height:15%;">
+						<div class="toolframe">
+							<span style="margin-left:10px;" class="glyphicon glyphicon-camera" onclick="camera()"></span>
+							<span style="margin-left:10px;" class="glyphicon glyphicon-volume-up" onclick="record()"></span>
+						</div>
+						<textarea id="input" spellcheck="false" ></textarea>					
+					</form>	
+					<div style="width:100%;text-align:right;"><label class="sendbtn" onclick="model1.send()">发送</label></div>		
+				</div>
+			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+				<div class="list-group">
+					<a href="javascript:void(0)" id="home" onclick="model2.view('home')" class="list-group-item">个人主页</a>
+					<a href="javascript:void(0)" id="record" onclick="model2.view('record')" class="list-group-item">消息记录</a> 
+					<a href="javascript:void(0)" id="dialog" onclick="model2.view('dialog');" class="list-group-item active">当前服务</a>
+				</div>
+			</div>
+		</div>
+		<hr style="display: none;">
+		<footer>
+		</footer>
+
+	</div>	
+	<script src="../../js/clock/js/jquery.min.js"></script>
+	<script src="../../js/clock/js/moment.min.js"></script>
+	<script src="../../js/clock/assets/js/script.js"></script>
+	<script src="../../js/server/navigation.js"></script>
+	<script src="../../js/server/dialog.js"></script>
+	<script src="../../js/server/service.js"></script>
+	<script type="text/javascript">
+		function camera(){
+			window.location.assign("uploadAudio.html");
+
+		}
+		function record(){
+			alert("录音设备坏了。请稍后尝试吧。");
+		}
+		function reload(){
+		
+		}
+    </script>
+
+</body>
+</html>

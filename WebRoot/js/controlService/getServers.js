@@ -8,7 +8,7 @@ var xmlhttp1;	//xmlHttpRequest object
 var xmlhttp2;
 var getInforesult;
 var model3={
-		infoUrl:"http://localhost:8080/dsgx/website/GetServers",
+		infoUrl:httpUrl+"/dsgx/website/GetServers",
 		//主函数，获取客服信息
 		getInfo:function(){
 			xmlhttp1 = new XMLHttpRequest();
@@ -23,7 +23,7 @@ var model3={
 			xmlhttp1.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 			xmlhttp1.send();
 		},
-		registUrl:"http://localhost:8080/dsgx/website/WebRegist",
+		registUrl:httpUrl+"/dsgx/website/WebRegist",
 		//显示注册界面
 		add:function(){
 			var manage = document.getElementById("manage");

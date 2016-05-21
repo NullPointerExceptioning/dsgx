@@ -5,7 +5,7 @@
  * function loign()	//登录功能 
  */
 var model = {
-	loginUrl: "http://localhost:8080/dsgx/website/WebLogin",
+	loginUrl: httpUrl+"/dsgx/website/WebLogin",
 	login: function() {
 		//登录按钮
 		var login = document.getElementById("login");
@@ -42,10 +42,10 @@ var tool = {
 				login.innerHTML = "登录";
 			}//登录到客服页面
 			else if(result==1){
-				window.location = "adviser.html";
+				window.location = "html/server/index.html";
 			}//登录到经理页面
 			else if(result==2){
-				window.location = "manageS.html";
+				window.location = "html/manager/manager.html";
 			}
 		}
 }
